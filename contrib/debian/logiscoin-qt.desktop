@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Charitycoin
+Comment=Charitycoin P2P Cryptocurrency
+Comment[fr]=Charitycoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Charitycoin, eşten eşe kriptografik sanal para birimi
+Exec=charitycoin-qt %u
+Terminal=false
+Type=Application
+Icon=charitycoin128
+MimeType=x-scheme-handler/charitycoin;
+Categories=Office;Finance;

@@ -1,0 +1,26 @@
+[Unit]
+Description=CharityCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=charitycoin
+Group=charitycoin
+
+Type=forking
+PIDFile=/var/lib/charitycoind/charitycoind.pid
+
+ExecStart=/usr/bin/charitycoind -daemon -pid=/var/lib/charitycoind/charitycoind.pid \
+          -conf=/etc/charitycoin/charitycoin.conf -datadir=/var/lib/charitycoind
+
+ExecStop=-/usr/bin/charitycoin-cli -conf=/etc/charitycoin/charitycoin.conf \
+         -datadir=/var/lib/charitycoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
